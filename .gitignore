@@ -1,0 +1,7 @@
+node-api/node_modules/
+node-api/tasks.db
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
