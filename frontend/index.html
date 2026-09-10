@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">PYTHON × NODE.JS</p>
+        <h1>Smart Task Manager</h1>
+        <p>Manage tasks and let the Python service estimate urgency.</p>
+      </div>
+      <button id="refreshBtn" class="secondary">↻ Refresh</button>
+    </header>
 
+    <section class="stats">
+      <div class="stat"><span>Total</span><strong id="total">0</strong></div>
+      <div class="stat"><span>Pending</span><strong id="pending">0</strong></div>
+      <div class="stat"><span>Completed</span><strong id="completed">0</strong></div>
+      <div class="stat"><span>High Priority</span><strong id="highPriority">0</strong></div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Add a task</h2>
+        <form id="taskForm">
+          <label>Title
+            <input id="title" required placeholder="e.g. Finish portfolio project">
+          </label>
+
+          <label>Description
+            <textarea id="description" placeholder="Add details..."></textarea>
+          </label>
+
+          <div class="two-col">
+            <label>Priority
+              <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <label>Due date
+              <input id="dueDate" type="date">
+            </label>
+          </div>
+
+          <button class="primary" type="submit">+ Add Task</button>
+        </form>
+        <div id="message" class="message"></div>
+      </div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <div>
+            <h2>Your tasks</h2>
+            <p class="muted">Search, filter and manage your work.</p>
+          </div>
+          <select id="statusFilter">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+
+        <input id="search" class="search" placeholder="🔎 Search tasks...">
+        <div id="taskList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
